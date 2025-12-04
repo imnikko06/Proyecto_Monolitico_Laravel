@@ -45,4 +45,21 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /*
+     * relacion 1 a M a petitions, un usuario puede tener muchas petitions creadas
+     */
+    public function petitionsCreated()
+    {
+        return $this->hasMany(Petition::class, 'user_id');
+    }
+    /*
+     * relacion a petitions, un usuario puede firmar muchas petitions
+     */
+    public function signedPetitions()
+    {
+        return $this->belongsToMany(Petition::class, 'petition_user', 'user_id', 'petition_id')
+            ->withTimestamps();
+    }
+
 }

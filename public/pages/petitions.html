@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descubre tu Causa - Réplica</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/petitions.css">
+</head>
+
+<body class="bg-white">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand" href="home.html">
+        <img src="../assets/img/logo.png" alt="Logo" height="28">
+      </a>
+      <!-- Estoy poniendo window.location.href en algunos a porque no me esta funcionando correctamente en el ordenador y no se porque-->
+      <a href="./makeapetition.html" class="btn btn-outline-dark btn-sm d-lg-none btn-mobile-nav" style="font-weight: 600; border-color: #333; color: #333; border-radius: 6px; font-size: 0.9rem; padding: 0.3rem 0.6rem;" onclick="window.location.href = './makeapetition.html'">Inicia una petición</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center d-none d-lg-flex">
+          <li class="nav-item"><a class="nav-link" href="#">Mis peticiones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Programa de socios/as</a></li>
+          <li class="nav-item position-relative">
+            <input class="form-control form-control-sm rounded-pill ps-3 pe-5" placeholder="Buscar"
+              aria-label="Buscar" style="max-width:200px;" onclick="window.location.href = './petitions.html'" />
+            <i class="fas fa-search position-absolute"
+              style="right: 15px; top: 50%; transform: translateY(-50%); color:#888;"></i>
+          </li>
+        </ul>
+        <div class="d-none d-lg-flex align-items-center gap-3 flex-wrap">
+          <button class="btn btn-outline-primary-custom rounded-pill px-3 py-1" type="button">Inicia una
+            petición</button>
+          <a href="#" class="text-decoration-none fw-semibold" style="color:#232f3e;">Entrar</a>
+        </div>
+        <ul class="navbar-nav d-lg-none mt-3 nav-mobile-menu">
+          <li class="nav-item border-top">
+            <a class="nav-link" href="#">Programa de socios/as</a>
+          </li>
+          <li class="nav-item border-top">
+            <a class="nav-link" href="#">Buscar</a>
+          </li>
+          <li class="nav-item border-top border-bottom">
+            <a class="nav-link" href="#">Entra o regístrate</a>
+          </li>
+        </ul>
+        </div>
+    </div>
+  </nav>
+
+  <section class="hero-search-section">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold mb-3">Descubre tu próxima causa</h1>
+      <p class="fs-5 text-muted mb-4 pb-2">Explora millones de peticiones y encuentra las que te interesan</p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-7">
+          <form action="#" class="d-flex gap-2">
+            <div class="position-relative flex-grow-1">
+              <i class="fas fa-search position-absolute top-50 translate-middle-y"
+                style="left: 1.25rem; color: #6c757d; z-index: 10;"></i>
+              <input type="text" class="form-control form-control-lg ps-5" placeholder="Buscar peticiones">
+            </div>
+            <button class="btn btn-search-yellow btn-lg" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Explorar</h2>
+      <div class="row g-4">
+
+        <div class="col-lg-4 col-md-6">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="p-4 rounded-3 text-center h-100 explore-card">
+              <div class="explore-icon-wrapper">
+                <i class="fas fa-location-dot"></i>
+              </div>
+              <p class="fs-5 fw-semibold mb-0">Cerca de ti</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="p-4 rounded-3 text-center h-100 explore-card">
+              <div class="explore-icon-wrapper">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <p class="fs-5 fw-semibold mb-0">Populares</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <a href="#" class="text-decoration-none text-dark">
+            <div class="p-4 rounded-3 text-center h-100 explore-card">
+              <div class="explore-icon-wrapper">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <p class="fs-5 fw-semibold mb-0">Victorias</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-body-tertiary">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Temas</h2>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="#" class="btn btn-outline-secondary">Políticas Públicas</a>
+        <a href="#" class="btn btn-outline-secondary">Política y Gobierno</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+        <a href="#" class="btn btn-outline-secondary">Educación</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+
+      <h2 class="fw-bold mb-4">Peticiones patrocinadas por otros usuarios de Change.org</h2>
+      <div class="row g-4 mb-5">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="petition-card">
+            <img src="../assets/img/foto.png" alt="Causa patrocinada 1">
+            <div class="petition-content">
+              <div class="petition-sponsor">Patrocinado por 6 firmantes</div>
+              <div class="petition-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <div class="petition-author">Autor de la Petición, Ubicación</div>
+              <div class="petition-signatures">255 firmas</div>
+              <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="petition-card">
+            <img src="../assets/img/foto.png" alt="Causa patrocinada 2">
+            <div class="petition-content">
+              <div class="petition-sponsor">Patrocinado por 3 firmantes</div>
+              <div class="petition-title">EN DEFENSA DEL SILO - SANTA CRUZ DE TENERIFE</div>
+              <div class="petition-author">Nombre Autor, España</div>
+              <div class="petition-signatures">378 firmas</div>
+              <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="petition-card">
+            <img src="../assets/img/foto.png" alt="Causa patrocinada 3">
+            <div class="petition-content">
+              <div class="petition-sponsor">Patrocinado por 4 firmantes</div>
+              <div class="petition-title">ESTADIO ZEBENSUI RAMOS GONZÁLEZ</div>
+              <div class="petition-author">Nombre Autor, España</div>
+              <div class="petition-signatures">396 firmas</div>
+              <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="petition-card">
+            <img src="../assets/img/foto.png" alt="Causa patrocinada 4">
+            <div class="petition-content">
+              <div class="petition-sponsor">Patrocinado por 1 firmante</div>
+              <div class="petition-title">Aumentar medidas de seguridad en Rincón de Loix</div>
+              <div class="petition-author">Nombre Autor, España</div>
+              <div class="petition-signatures">46 firmas</div>
+              <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="petition-card">
+            <img src="../assets/img/foto.png" alt="Causa patrocinada 1">
+            <div class="petition-content">
+              <div class="petition-sponsor">Patrocinado por 6 firmantes</div>
+              <div class="petition-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <div class="petition-author">Autor de la Petición, Ubicación</div>
+              <div class="petition-signatures">255 firmas</div>
+              <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="petition-card">
+            <img src="../assets/img/foto.png" alt="Causa patrocinada 2">
+            <div class="petition-content">
+              <div class="petition-sponsor">Patrocinado por 3 firmantes</div>
+              <div class="petition-title">EN DEFENSA DEL SILO - SANTA CRUZ DE TENERIFE</div>
+              <div class="petition-author">Nombre Autor, España</div>
+              <div class="petition-signatures">378 firmas</div>
+              <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="petition-card">
+            <img src="../assets/img/foto.png" alt="Causa patrocinada 3">
+            <div class="petition-content">
+              <div class="petition-sponsor">Patrocinado por 4 firmantes</div>
+              <div class="petition-title">ESTADIO ZEBENSUI RAMOS GONZÁLEZ</div>
+              <div class="petition-author">Nombre Autor, España</div>
+              <div class="petition-signatures">396 firmas</div>
+              <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="petition-card">
+            <img src="../assets/img/foto.png" alt="Causa patrocinada 4">
+            <div class="petition-content">
+              <div class="petition-sponsor">Patrocinado por 1 firmante</div>
+              <div class="petition-title">Aumentar medidas de seguridad en Rincón de Loix</div>
+              <div class="petition-author">Nombre Autor, España</div>
+              <div class="petition-signatures">46 firmas</div>
+              <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row g-4" style="user-select: none;">
+
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Acerca de</h6>
+          <ul>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Impacto</a></li>
+            <li><a href="#">Empleo</a></li>
+            <li><a href="#">Equipo</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Comunidad</h6>
+          <ul>
+            <li><a href="#">Prensa</a></li>
+            <li><a href="#">Normas</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Ayuda</h6>
+          <ul>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Guías</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Accesibilidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Gestionar cookies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Redes sociales</h6>
+          <ul class="social-list">
+            <li><a href="#">X</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crear una Petición - Réplica</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/makeapetition.css">
+</head>
+
+<body class="bg-body-tertiary">
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand" href="home.html">
+        <img src="../assets/img/logo.png" alt="Logo" height="28">
+      </a>
+      <!-- Estoy poniendo window.location.href en algunos a porque no me esta funcionando correctamente en el ordenador y no se porque-->
+      <a href="./makeapetition.html" class="btn btn-outline-dark btn-sm d-lg-none btn-mobile-nav" style="font-weight: 600; border-color: #333; color: #333; border-radius: 6px; font-size: 0.9rem; padding: 0.3rem 0.6rem;" onclick="window.location.href = './makeapetition.html'">Inicia una petición</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center d-none d-lg-flex">
+          <li class="nav-item"><a class="nav-link" href="#">Mis peticiones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Programa de socios/as</a></li>
+          <li class="nav-item position-relative">
+            <input class="form-control form-control-sm rounded-pill ps-3 pe-5" placeholder="Buscar"
+              aria-label="Buscar" style="max-width:200px;" onclick="window.location.href = './petitions.html'" />
+            <i class="fas fa-search position-absolute"
+              style="right: 15px; top: 50%; transform: translateY(-50%); color:#888;"></i>
+          </li>
+        </ul>
+        <div class="d-none d-lg-flex align-items-center gap-3 flex-wrap">
+          <button class="btn btn-outline-primary-custom rounded-pill px-3 py-1" type="button">Inicia una
+            petición</button>
+          <a href="#" class="text-decoration-none fw-semibold" style="color:#232f3e;">Entrar</a>
+        </div>
+        <ul class="navbar-nav d-lg-none mt-3 nav-mobile-menu">
+          <li class="nav-item border-top">
+            <a class="nav-link" href="#">Programa de socios/as</a>
+          </li>
+          <li class="nav-item border-top">
+            <a class="nav-link" href="#">Buscar</a>
+          </li>
+          <li class="nav-item border-top border-bottom">
+            <a class="nav-link" href="#">Entra o regístrate</a>
+          </li>
+        </ul>
+        </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <div class="row">
+      <div class="col-lg-8 col-xl-7 mx-auto">
+
+        <section class="text-center mb-5">
+          <h1 class="display-5 fw-bold form-section-title mb-4">¿Necesitas ayuda para escribir tu petición?</h1>
+          <a href="#step-2" class="card-select text-decoration-none d-block mb-3">
+            <div class="card card-body p-4 text-start">
+              <h5 class="fw-bold">Sí, por favor</h5>
+              <p class="mb-0 text-muted">Utilizaremos IA para crear un borrador.</p>
+            </div>
+          </a>
+          <a href="#step-2" class="card-select text-decoration-none d-block">
+            <div class="card card-body p-4 text-start">
+              <h5 class="fw-bold">No, gracias</h5>
+              <p class="mb-0 text-muted">Escribe tu propia petición.</p>
+            </div>
+          </a>
+        </section>
+
+        <section id="step-2" class="text-center pt-5 mt-5 border-top">
+          <h2 class="display-5 fw-bold form-section-title mb-3">Demos el primer paso hacia el cambio</h2>
+          <p class="fs-5 text-muted mb-4">Selecciona el ámbito de tu petición:</p>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <a href="#step-3" class="card-scope-link">
+                <div class="card card-body h-100 p-4">
+                  <i class="fa-solid fa-house card-icon"></i>
+                  <h5 class="fw-bold">Local</h5>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="#step-3" class="card-scope-link">
+                <div class="card card-body h-100 p-4">
+                  <i class="fa-solid fa-building-columns card-icon"></i>
+                  <h5 class="fw-bold">Nacional</h5>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="#step-3" class="card-scope-link">
+                <div class="card card-body h-100 p-4">
+                  <i class="fa-solid fa-globe card-icon"></i>
+                  <h5 class="fw-bold">Global</h5>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="step-3" class="text-center pt-5 mt-5 border-top">
+          <h2 class="display-5 fw-bold form-section-title mb-3">¿Qué zona geográfica se ve afectada?</h2>
+          <p class="fs-5 text-muted mb-4">Ayudará a que más personas descubran tu petición.</p>
+          <form>
+            <div class="mb-3 text-start">
+              <label for="location" class="form-label fw-bold">Barrio, ciudad, estado o región</label>
+              <input type="text" class="form-control form-control-lg" id="location">
+            </div>
+          </form>
+        </section>
+
+        <section id="step-4" class="text-center pt-5 mt-5 border-top">
+          <h2 class="display-5 fw-bold form-section-title mb-3">Escribe el título de tu petición</h2>
+          <p class="fs-5 text-muted mb-4">Explica a la gente lo que quieres cambiar.</p>
+          <form>
+            <div class="mb-2 text-start">
+              <label for="title" class="form-label fw-bold">Título de la petición</label>
+              <textarea class="form-control form-control-lg" id="title" rows="3"></textarea>
+              <div class="text-end text-muted small mt-1">90</div>
+            </div>
+          </form>
+        </section>
+
+        <section id="step-5" class="text-start pt-5 mt-5 border-top">
+          <h2 class="display-5 fw-bold form-section-title mb-3 text-center">Cuenta tu historia</h2>
+          <p class="fs-5 text-muted mb-4 text-center">Empieza desde cero o utiliza la estructura que recomendamos a
+            continuación. Siempre puedes editar tu petición, incluso después de publicarla.</p>
+          <form>
+            <div class="editor-toolbar">
+              <button class="btn btn-sm"><i class="fa-solid fa-bold"></i></button>
+              <button class="btn btn-sm"><i class="fa-solid fa-italic"></i></button>
+              <button class="btn btn-sm"><i class="fa-solid fa-list-ul"></i></button>
+              <button class="btn btn-sm"><i class="fa-solid fa-list-ol"></i></button>
+              <button class="btn btn-sm"><i class="fa-solid fa-link"></i></button>
+              <button class="btn btn-sm"><i class="fa-solid fa-play"></i></button>
+              <button class="btn btn-sm"><i class="fa-solid fa-image"></i></button>
+              <button class="btn btn-sm"><i class="fa-solid fa-question-circle"></i></button>
+            </div>
+            <textarea class="form-control form-control-lg editor-textarea" id="story" rows="12"></textarea>
+
+            <div class="bg-body-tertiary p-4 rounded mt-4">
+              <h5 class="fw-bold">Consejos</h5>
+              <p class="mb-2">Nuestros expertos en peticiones recomiendan la siguiente estructura:</p>
+              <p class="mb-2"><strong>Párrafo 1: ¿Quién se ve afectado?</strong><br><small>Describe cómo el problema
+                  afecta a las personas.</small></p>
+              <p class="mb-2"><strong>Párrafo 2: ¿Qué está en juego?</strong><br><small>Explica lo que significará si la
+                  situación cambia o permanece igual.</small></p>
+              <p class="mb-0"><strong>Párrafo 3: ¿Por qué el momento de actuar es ahora?</strong><br><small>Resume y
+                  destaca la importancia de tomar medidas de forma inmediata.</small></p>
+            </div>
+
+          </form>
+        </section>
+
+        <section id="step-6" class="text-start pt-5 mt-5 border-top">
+          <h2 class="display-5 fw-bold form-section-title mb-2 text-center">Añade una imagen</h2>
+          <p class="fs-6 text-muted mb-3 text-center">(Opcional)<br>Las peticiones con imágenes consiguen hasta seis
+            veces más firmas.</p>
+
+          <div class="upload-box text-center p-5 border-dashed rounded-3 mb-4">
+            <i class="fa-solid fa-image display-1 text-muted mb-4"></i><br>
+            <button class="btn btn-yellow fw-bold px-4 py-2 mb-2">Subir una imagen</button><br>
+            <button class="btn btn-outline-dark fw-bold px-4 py-2"><i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+              Generar con IA</button>
+          </div>
+          <p class="text-muted small text-center">Las imágenes de 1200 x 675 píxeles como mínimo se verán bien en
+            cualquier tipo de pantalla</p>
+
+          <h4 class="fw-bold mt-5 mb-3">Consejos</h4>
+          <div class="accordion accordion-flush" id="imageTipsAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne">
+                  <i class="fa-solid fa-check text-success accordion-button-icon"></i> Correcto
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#imageTipsAccordion">
+                <div class="accordion-body">
+                  Utiliza una imagen de una persona o un animal en primer plano que transmita emoción.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section id="step-7" class="text-start pt-5 mt-5 border-top">
+          <h2 class="display-5 fw-bold form-section-title mb-2 text-center">¡Consigue cobertura en los medios para tu
+            petición!</h2>
+          <p class="fs-6 text-muted mb-3 text-center">(Opcional)<br>Añade tu número de teléfono móvil para que podamos
+            ponerte en contacto con periodistas que quieran cubrir tu petición. <a href="#">Más información.</a></p>
+
+          <form>
+            <label for="phone" class="form-label fw-bold">Número de teléfono móvil</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text input-group-flag">
+                <select class="form-select" aria-label="Código de país">
+                  <option selected>🇪🇸</option>
+                  <option value="1">🇺🇸</option>
+                  <option value="2">🇫🇷</option>
+                </select>
+              </span>
+              <input type="tel" class="form-control form-control-lg" id="phone">
+            </div>
+            <p class="text-muted small">Al proporcionar tu número de teléfono, aceptas que Change.org y periodistas
+              seleccionados se pongan en contacto contigo...</p>
+          </form>
+
+          <div class="bg-body-tertiary p-4 rounded mt-4">
+            <h5 class="fw-bold">Cómo funciona</h5>
+            <p class="mb-2"><strong>Añade tu número de teléfono</strong><br><small>Si tu petición cumple los requisitos,
+                un especialista en comunicaciones de Change.org podrá compartirla con los medios de
+                comunicación.</small></p>
+            <p class="mb-2"><strong>Comunícate con periodistas</strong><br><small>Nuestro equipo se pondrá en contacto
+                contigo para informarte oportunidades de prensa o para compartir tus datos con periodistas que
+                elijamos.</small></p>
+            <p class="mb-0"><strong>¡Eso es todo!</strong><br><small>La cobertura en los medios es una forma de lograr
+                que tu causa avance; nuestro apoyo es <strong>totalmente gratuito</strong>.</small></p>
+          </div>
+          <div class="d-flex justify-content-center gap-3 mt-4">
+            <button type="button" class="btn btn-outline-dark fw-bold px-4 py-2">Vista previa de la petición</button>
+            <button type="button" class="btn btn-yellow fw-bold px-4 py-2">Crear una petición</button>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4" style="user-select: none;">
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Acerca de</h6>
+          <ul>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Impacto</a></li>
+            <li><a href="#">Empleo</a></li>
+            <li><a href="#">Equipo</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Comunidad</h6>
+          <ul>
+            <li><a href="#">Prensa</a></li>
+            <li><a href="#">Normas</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Ayuda</h6>
+          <ul>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Guías</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Accesibilidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Gestionar cookies</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Redes sociales</h6>
+          <ul class="social-list">
+            <li><a href="#">X</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

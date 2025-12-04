@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Petición - Réplica</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/peticion.css">
+</head>
+
+<body class="bg-body-tertiary">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand" href="home.html">
+        <img src="../assets/img/logo.png" alt="Logo" height="28">
+      </a>
+      <!-- Estoy poniendo window.location.href en algunos a porque no me esta funcionando correctamente en el ordenador y no se porque-->
+      <a href="./makeapetition.html" class="btn btn-outline-dark btn-sm d-lg-none btn-mobile-nav" style="font-weight: 600; border-color: #333; color: #333; border-radius: 6px; font-size: 0.9rem; padding: 0.3rem 0.6rem;" onclick="window.location.href = './makeapetition.html'">Inicia una petición</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center d-none d-lg-flex">
+          <li class="nav-item"><a class="nav-link" href="#">Mis peticiones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Programa de socios/as</a></li>
+          <li class="nav-item position-relative">
+            <input class="form-control form-control-sm rounded-pill ps-3 pe-5" placeholder="Buscar"
+              aria-label="Buscar" style="max-width:200px;" onclick="window.location.href = './petitions.html'" />
+            <i class="fas fa-search position-absolute"
+              style="right: 15px; top: 50%; transform: translateY(-50%); color:#888;"></i>
+          </li>
+        </ul>
+        <div class="d-none d-lg-flex align-items-center gap-3 flex-wrap">
+          <button class="btn btn-outline-primary-custom rounded-pill px-3 py-1" type="button">Inicia una
+            petición</button>
+          <a href="#" class="text-decoration-none fw-semibold" style="color:#232f3e;">Entrar</a>
+        </div>
+        <ul class="navbar-nav d-lg-none mt-3 nav-mobile-menu">
+          <li class="nav-item border-top">
+            <a class="nav-link" href="#">Programa de socios/as</a>
+          </li>
+          <li class="nav-item border-top">
+            <a class="nav-link" href="#">Buscar</a>
+          </li>
+          <li class="nav-item border-top border-bottom">
+            <a class="nav-link" href="#">Entra o regístrate</a>
+          </li>
+        </ul>
+        </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+
+    <div class="row g-4">
+
+      <div class="col-lg-8">
+        <div class="p-4 p-md-5 main-content">
+
+          <h1 class="h2 fw-bold mb-3">Soy víctima de violencia machista. Pido mejorar urgentemente las pulseras de protección</h1>
+          <img src="../assets/img/foto.png" class="img-fluid rounded-3 mb-3" alt="Imagen de la petición">
+
+          <div class="recent-signers mb-4">
+            <span><strong>yolanda delgada alcántara</strong> firmó hace 1 día</span>
+            <span><strong>Alain Amaury</strong> firmó hace 2 días</span>
+          </div>
+
+          <p class="text-muted" style="font-weight: 500;">
+            <i class="fa-solid fa-user-group me-1"></i> 4 peticiones de firmantes
+          </p>
+
+          <section class="petition-body mt-4">
+            <h2 class="fw-bold">El problema</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt soluta minima, rerum veritatis tempora laudantium, odit placeat ratione reprehenderit accusamus natus atque, expedita maxime! Totam rem fugiat dolorum officia magnam!
+              Perspiciatis quasi natus ipsa similique doloribus porro. Beatae, voluptas quae! Autem, in placeat ut quam voluptatem quisquam ipsum nam voluptates expedita facilis, ex exercitationem fuga praesentium commodi ipsam, mollitia molestiae!
+              Qui eveniet totam rerum laudantium nulla non deserunt in fugiat illo deleniti odio eius cupiditate praesentium quaerat repudiandae, eaque accusamus. Eaque, quo veniam. Laboriosam, molestias dolores possimus soluta facilis doloremque.
+              Accusamus non at ipsa. Molestiae minus quod iste voluptate pariatur dolorem aperiam aliquam eaque. Nisi accusamus sit ad repellendus commodi sapiente, quae itaque alias quam rem, quisquam maiores, eaque fugiat?
+              Animi, qui! Harum, minima a architecto illum repellendus asperiores ipsam id. A, sapiente. Ex pariatur et cumque quaerat quo adipisci animi dolores delectus, eaque odio! Praesentium nisi esse libero eligendi?
+              Fugiat repudiandae natus vel nihil explicabo omnis, quo libero magni culpa iste totam quidem doloribus est commodi nisi ex dignissimos facilis voluptates odit nam quod unde sed harum eius. Molestias?
+              Vero praesentium consequuntur mollitia? Nam porro saepe ad reiciendis cum sunt error laudantium perspiciatis explicabo animi quae optio, perferendis, dolore laboriosam. Ipsum ducimus, facilis natus soluta quibusdam sapiente alias eaque.
+              Temporibus architecto modi eos mollitia debitis ut labore, provident quo laborum, earum ullam tempore autem blanditiis non quibusdam delectus. Natus laboriosam harum aperiam perspiciatis ea ipsa optio doloribus magnam sunt!
+              Ullam voluptatum facere inventore dolorum aspernatur accusantium libero vitae praesentium corporis consectetur, eum beatae, quibusdam tempora, repudiandae repellat. Praesentium ad placeat in! Qui delectus rerum quos fugit, repellat accusamus expedita.
+              Saepe reprehenderit impedit corrupti ratione. Illo eos dolor minima tempora at ipsam earum eius deleniti magni. Adipisci sit, neque porro et blanditiis perspiciatis, culpa id sapiente, officiis amet eligendi pariatur!
+              Suscipit eos autem ipsam velit veniam fugit atque iusto. At tempore amet quis consectetur adipisci enim praesentium, facilis eveniet libero delectus. Facilis suscipit eligendi illum asperiores est optio, accusamus ut.
+              Aliquam consequatur, dicta mollitia maxime iste ratione, sequi debitis culpa perspiciatis, esse ipsa sunt. Quaerat, magnam? Accusantium ea sequi dolor nam soluta. Iure, libero aperiam velit id laudantium tenetur dolore.
+              Aliquam, fuga atque necessitatibus minima id iste enim laudantium sapiente qui tenetur dicta, aut eos soluta eaque natus quam accusamus? Nemo voluptate vel reprehenderit officia assumenda dolorem iusto dolor quibusdam!
+              Odit deleniti voluptates blanditiis quod tempora debitis voluptatem culpa, ullam sapiente ea nisi in. Harum culpa doloremque fugit iure officiis iusto velit porro, quasi eum similique, perspiciatis blanditiis? Blanditiis, dolore.
+              Aliquam asperiores rem quo iusto unde quasi facere voluptatem cum et, fugiat maiores obcaecati accusamus! Modi enim delectus fuga, praesentium libero velit eligendi, officiis, dolores asperiores rem eaque earum rerum?
+              Cupiditate in repellat, deserunt incidunt veritatis iusto aspernatur recusandae, deleniti obcaecati harum fugit rerum ad aliquid sapiente accusamus consequatur hic ipsa perspiciatis. Consequatur quis assumenda dolorem maxime obcaecati nihil eveniet.
+              Aut et sunt soluta hic veritatis perferendis. Asperiores id soluta ratione, consequuntur illum fugit et? Nobis, temporibus quo dolores sapiente distinctio quis consectetur rerum placeat. Odit quidem veniam dolores aperiam.
+              Soluta asperiores necessitatibus adipisci eaque consequuntur ducimus blanditiis repellat, doloremque dolores suscipit autem omnis fugiat excepturi recusandae fuga. Facere cumque a dolores, laudantium dolore iure ipsa possimus dolorem porro animi!
+              Ab distinctio nam dolore sint dolorum quam facere asperiores neque exercitationem repudiandae consequuntur quod, iure voluptate quo sit. Officiis libero ipsa repellat nam odio similique, laborum placeat reprehenderit doloribus maxime.
+              Doloremque doloribus soluta magni, asperiores maxime libero atque sapiente, qui et perferendis cumque animi reiciendis placeat consequatur, nulla iusto? Dolores quis quibusdam repellat totam voluptate illo asperiores soluta placeat tempora!
+              Cupiditate laborum consectetur voluptates repudiandae in consequuntur ducimus odio quas quia quidem hic provident voluptatibus, et enim placeat quibusdam cumque expedita non aliquam eveniet recusandae! Deleniti assumenda necessitatibus saepe reprehenderit!
+              Repudiandae voluptatum, a hic dolorem delectus autem laboriosam magnam facere, dolor sit consequuntur tempora culpa quas expedita. Eius quisquam, nesciunt fugit in ex harum. Et ab praesentium saepe tempora eligendi!
+              Ex consectetur, vitae quod numquam distinctio eaque in omnis dignissimos facilis asperiores delectus, aperiam recusandae inventore nam? Voluptate, inventore cum illo similique tempora a quidem itaque consectetur unde expedita sunt?
+              Voluptatum distinctio iusto voluptatem necessitatibus numquam deserunt aliquid dolorum, unde dolorem alias tenetur debitis error. Error fugit, corrupti nisi nihil vero eligendi alias ut, temporibus provident id tempore, saepe aliquid.
+              Eos recusandae corporis maxime dolores reprehenderit quae id debitis? Corporis laudantium adipisci consectetur, est hic doloremque, nostrum maxime error incidunt dolor asperiores facilis ipsam molestias! Quisquam earum omnis optio aliquid!
+              Optio, molestiae. Sunt unde optio nihil officiis ex, dolorum sapiente, quo quam, possimus nostrum maxime distinctio molestias delectus pariatur debitis ipsum veritatis. Praesentium optio fugiat rerum illum, est nesciunt rem.
+              Enim, placeat quod optio officia quo porro, nemo error dolore tempore magnam aliquid repudiandae harum fuga odit. Alias cupiditate quidem ducimus officiis voluptatibus, porro, nesciunt inventore ipsum dolorem accusantium quibusdam.
+              Aliquid a illum repellendus obcaecati ad, maiores nostrum nihil et voluptate ex ipsa recusandae, distinctio dolorem animi, praesentium molestiae facilis. Maxime accusantium corrupti, odio sapiente incidunt praesentium a omnis hic!
+              Magni recusandae animi perspiciatis molestias ab laborum repudiandae eaque commodi cupiditate quas! Quas deleniti quos nam nemo cupiditate necessitatibus, dolore reprehenderit doloribus eaque excepturi atque voluptate autem ducimus, quae eum.
+              Laudantium nobis magnam ducimus debitis culpa, praesentium esse, facilis repellat adipisci modi saepe tempora aliquam rem, inventore ipsa! Quo a qui nulla minima ad illo sit ducimus corrupti architecto dolor.
+            </p>
+            <a href="#" class="text-decoration-none" style="font-size: 0.9rem;"><i class="fa-solid fa-flag me-1"></i> Denunciar una violación de las políticas</a>
+          </section>
+
+          <section class="author-box d-flex align-items-center gap-3 my-4">
+            <div class="author-icon rounded-circle d-flex align-items-center justify-content-center">
+              <i class="fa-solid fa-user fs-5"></i>
+            </div>
+            <div class="flex-grow-1">
+              <div class="fw-bold">Paquita</div>
+              <div class="text-muted" style="font-size: 0.9rem;">Creadore de la petición</div>
+            </div>
+            <button class="btn btn-outline-secondary btn-sm" style="font-weight: 600;">Consultas de medios</button>
+          </section>
+
+          <section class="comments-section">
+            <h2 class="fw-bold mb-3">Opiniones de firmantes</h2>
+            <h3 class="h6 text-muted mb-4">Comentarios destacados</h3>
+
+            <div class="d-flex gap-3 mb-4">
+              <div class="author-icon rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="background-color: #fce4ec;">
+                <span class="fw-bold fs-5" style="color: #ec407a;">C</span>
+              </div>
+              <div class="flex-grow-1">
+                <div class="comment-author">Cristina <span class="fw-normal text-muted">· Madrid</span></div>
+                <div class="comment-meta mb-2">hace 1 mes</div>
+                <p>"Me ha ATERRADO leer este testimonio." y luego dicen que las mujeres "nos lo inventamos"...</p>
+                <div class="comment-actions">
+                  <a href="#" class="text-decoration-none">Ver el texto completo</a> ·
+                  <a href="#" class="text-decoration-none text-muted"><i class="fa-solid fa-thumbs-up"></i> 5 me gusta</a> ·
+                  <a href="#" class="text-decoration-none text-muted">Denunciar</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-3 mb-4">
+              <div class="author-icon rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="background-color: #fce4ec;">
+                <span class="fw-bold fs-5" style="color: #ec407a;">C</span>
+              </div>
+              <div class="flex-grow-1">
+                <div class="comment-author">Cristina <span class="fw-normal text-muted">· Madrid</span></div>
+                <div class="comment-meta mb-2">hace 1 mes</div>
+                <p>"Me ha ATERRADO leer este testimonio." y luego dicen que las mujeres "nos lo inventamos"...</p>
+                <div class="comment-actions">
+                  <a href="#" class="text-decoration-none">Ver el texto completo</a> ·
+                  <a href="#" class="text-decoration-none text-muted"><i class="fa-solid fa-thumbs-up"></i> 5 me gusta</a> ·
+                  <a href="#" class="text-decoration-none text-muted">Denunciar</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-3 mb-4">
+              <div class="author-icon rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="background-color: #fce4ec;">
+                <span class="fw-bold fs-5" style="color: #ec407a;">C</span>
+              </div>
+              <div class="flex-grow-1">
+                <div class="comment-author">Cristina <span class="fw-normal text-muted">· Madrid</span></div>
+                <div class="comment-meta mb-2">hace 1 mes</div>
+                <p>"Me ha ATERRADO leer este testimonio." y luego dicen que las mujeres "nos lo inventamos"...</p>
+                <div class="comment-actions">
+                  <a href="#" class="text-decoration-none">Ver el texto completo</a> ·
+                  <a href="#" class="text-decoration-none text-muted"><i class="fa-solid fa-thumbs-up"></i> 5 me gusta</a> ·
+                  <a href="#" class="text-decoration-none text-muted">Denunciar</a>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-secondary w-100" style="font-weight: 600;">Ver todos los comentarios</button>
+          </section>
+
+          <section class="support-box p-4 mt-5">
+            <h3 class="fw-bold">Apoya el cambio – Hazte socio</h3>
+            <p style="font-size: 0.9rem;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto optio ipsa, totam voluptatem itaque cum nihil quia illo temporibus pariatur, neque necessitatibus animi, perferendis laudantium officiis laboriosam! Laboriosam, vel reiciendis?
+            Tenetur et numquam magni necessitatibus dicta laboriosam dolorem magnam quas enim repellendus esse, iure ducimus ullam debitis eaque alias rem culpa pariatur officiis praesentium veniam eum in. Molestiae, in labore!</p>
+            <div class="d-flex gap-2 mb-3">
+              <button class="btn btn-amount">3 €</button>
+              <button class="btn btn-amount">5 €</button>
+              <button class="btn btn-amount">10 €</button>
+            </div>
+            <div class="d-flex gap-2 mb-3">
+              <button class="btn btn-amount">20 €</button>
+              <button class="btn btn-amount">Otra cantidad</button>
+            </div>
+            <button class="btn btn-yellow w-100 mb-2" style="border-radius: 8px;">Apoya a Change.org</button>
+            <p class="text-muted text-center" style="font-size: 0.8rem;">Pago con tarjeta de crédito o con <strong>PayPal</strong></p>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="supportCheck">
+              <label class="form-check-label" for="supportCheck" style="font-size: 0.9rem;">
+                ¡No, apoyaré para proteger el poder de las personas para marcar la diferencia!
+              </label>
+            </div>
+          </section>
+
+          <section class="updates-section mt-5">
+            <h2 class="fw-bold mb-3">Actualizaciones de la petición</h2>
+            <ul class="list-unstyled updates-list">
+              <li class="update-item py-3">
+                <a href="#" class="text-decoration-none text-dark">
+                  <div class="text-muted" style="font-size: 0.8rem;">hace 5 meses</div>
+                  <h4 class="h6 fw-bold">30.000 firmantes</h4>
+                </a>
+              </li>
+              <li class="update-item py-3">
+                 <a href="#" class="text-decoration-none text-dark">
+                  <div class="text-muted" style="font-size: 0.8rem;">hace 6 meses</div>
+                  <h4 class="h6 fw-bold">Maria Dolores Quesada ha lanzado esta petición</h4>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="share-section p-4 mt-4">
+            <h2 class="fw-bold mb-3">Compartir esta petición</h2>
+            <div class="row g-3 align-items-center">
+              <div class="col-md-3 text-center">
+                <img src="../assets/img/qr.png" alt="Código QR para compartir" class="img-fluid">
+                <a href="#" class="text-decoration-none d-block mt-1" style="font-size: 0.8rem;">Descargar código QR</a>
+              </div>
+              <div class="col-md-9">
+                <div class="d-grid gap-2">
+                  <button class="btn btn-outline-secondary text-start"><i class="fa-solid fa-link me-2"></i> Copiar enlace</button>
+                  <button class="btn btn-outline-secondary text-start"><i class="fa-brands fa-whatsapp me-2"></i> Enviar por WhatsApp</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="sticky-form">
+          <div class="petition-form-card">
+            <h3 class="h1 fw-bold">31.789 <i class="fa-solid fa-check text-success" style="font-size: 1.5rem;"></i></h3>
+            <p class="fw-semibold">Firma esta petición</p>
+
+            <form>
+              <div class="mb-3">
+                <label for="formNombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="formNombre">
+              </div>
+              <div class="mb-3">
+                <label for="formApellidos" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="formApellidos">
+              </div>
+              <div class="mb-3">
+                <label for="formEmail" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="formEmail">
+              </div>
+              <div class="mb-3">
+                <label for="formCiudad" class="form-label">Logroño, 26001</label>
+                <input type="text" class="form-control" id="formCiudad" value="España">
+              </div>
+
+              <div class="form-check mb-2" style="font-size: 0.9rem;">
+                <input class="form-check-input" type="checkbox" value="" id="check1" checked>
+                <label class="form-check-label" for="check1">
+                  Quiero saber si esta petición gana y cómo puedo ayudar a otras peticiones importantes.
+                </label>
+              </div>
+              <div class="form-check mb-3" style="font-size: 0.9rem;">
+                <input class="form-check-input" type="checkbox" value="" id="check2" checked>
+                <label class="form-check-label" for="check2">
+                  No mostrar públicamente mi firma y mi comentario en esta petición
+                </label>
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-yellow" type="submit" style="border-radius: 8px; padding: 0.75rem;">Firma la petición</button>
+              </div>
+
+              <p class="text-muted mt-3" style="font-size: 0.75rem;">
+                Si firmas, aceptas los Términos de servicio y la Política de privacidad de Change.org.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="container my-5 pt-5 border-top">
+    <h2 class="fw-bold mb-4">Peticiones patrocinadas por otros usuarios de Change.org</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+      <div class="col">
+        <div class="petition-card">
+          <img src="../assets/img/foto.png" alt="Petición 1">
+          <div class="petition-content">
+            <div class="petition-sponsor">Patrocinado por 1 firmante</div>
+            <div class="petition-title">Aumentar medidas de seguridad en Rincón de Loix, Benidorm</div>
+            <div class="petition-author">Lorem Ipsum, España</div>
+            <div class="petition-signatures">55 firmas</div>
+            <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card">
+          <img src="../assets/img/foto.png" alt="Petición 2">
+          <div class="petition-content">
+            <div class="petition-sponsor">Patrocinado por 2 firmantes</div>
+            <div class="petition-title">Nueva Zona de Perros "Sin Licencia" en el parque de...</div>
+            <div class="petition-author">Lorem Ipsum, España</div>
+            <div class="petition-signatures">2.218 firmas</div>
+            <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card">
+          <img src="../assets/img/foto.png" alt="Petición 3">
+          <div class="petition-content">
+            <div class="petition-sponsor">Patrocinado por 285 firmantes</div>
+            <div class="petition-title">ACTÚA. MISMOS PERROS, MISMAS SENTENCIAS. No a la...</div>
+            <div class="petition-author">Lorem Ipsum, España</div>
+            <div class="petition-signatures">38.753 firmas</div>
+            <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card">
+          <img src="../assets/img/foto.png" alt="Petición 4">
+          <div class="petition-content">
+            <div class="petition-sponsor">Patrocinado por 286 firmantes</div>
+            <div class="petition-title">Tengo cáncer de mama metastásico y pido a la...</div>
+            <div class="petition-author">Lorem Ipsum, España</div>
+            <div class="petition-signatures">46.684 firmas</div>
+            <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card">
+          <img src="../assets/img/foto.png" alt="Petición 5">
+          <div class="petition-content">
+            <div class="petition-sponsor">Patrocinado por 4 firmantes</div>
+            <div class="petition-title">EN DEFENSA DEL SILO - SANTA CRUZ DE TENERIFE</div>
+            <div class="petition-author">Lorem Ipsum, España</div>
+            <div class="petition-signatures">585 firmas</div>
+            <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card">
+          <img src="../assets/img/foto.png" alt="Petición 6">
+          <div class="petition-content">
+            <div class="petition-sponsor">Patrocinado por 4 firmantes</div>
+            <div class="petition-title">ESTADIO ZEBENSUI RAMOS GONZÁLEZ</div>
+            <div class="petition-author">Lorem Ipsum, España</div>
+            <div class="petition-signatures">377 firmas</div>
+            <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card">
+          <img src="../assets/img/foto.png" alt="Petición 7">
+          <div class="petition-content">
+            <div class="petition-sponsor">Patrocinado por 500 firmantes</div>
+            <div class="petition-title">Mi hija se suicidó con 15 años. El bullying NO es cosa de niñ@s...</div>
+            <div class="petition-author">Lorem Ipsum, España</div>
+            <div class="petition-signatures">260.468 firmas</div>
+            <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card">
+          <img src="../assets/img/foto.png" alt="Petición 8">
+          <div class="petition-content">
+            <div class="petition-sponsor">Patrocinado por 285 firmantes</div>
+            <div class="petition-title">El asesino de mi hijo tenía 17 años. Pido revisar YA la ley...</div>
+            <div class="petition-author">Lorem Ipsum, España</div>
+            <div class="petition-signatures">58.332 firmas</div>
+            <a href="#" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h2 class="fw-bold mb-4">Victorias</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+      <div class="col">
+        <div class="petition-card victory-card">
+          <div class="victory-tag">VICTORIA</div>
+          <img src="../assets/img/foto.png" alt="Victoria 1">
+          <div class="petition-content">
+            <div class="petition-title">Tengo 78 años y me siento ESTAFADA. Pido una...</div>
+            <div class="petition-signatures">641.828 firmas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card victory-card">
+          <div class="victory-tag">VICTORIA</div>
+          <img src="../assets/img/foto.png" alt="Victoria 2">
+          <div class="petition-content">
+            <div class="petition-title">URGENTE: Unidades especializadas en Trastornos de la Conducta...</div>
+            <div class="petition-signatures">381.938 firmas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card victory-card">
+          <div class="victory-tag">VICTORIA</div>
+          <img src="../assets/img/foto.png" alt="Victoria 3">
+          <div class="petition-content">
+            <div class="petition-title">Mi madre se ha suicidado. Pido un servicio de Teléfono público de...</div>
+            <div class="petition-signatures">96.354 firmas</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="petition-card victory-card">
+          <div class="victory-tag">VICTORIA</div>
+          <img src="../assets/img/foto.png" alt="Victoria 4">
+          <div class="petition-content">
+            <div class="petition-title">No habrá paz para los maltratadores. Cárcel para los delitos...</div>
+            <div class="petition-signatures">566.843 firmas</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4" style="user-select: none;">
+
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Acerca de</h6>
+          <ul>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Impacto</a></li>
+            <li><a href="#">Empleo</a></li>
+            <li><a href="#">Equipo</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Comunidad</h6>
+          <ul>
+            <li><a href="#">Prensa</a></li>
+            <li><a href="#">Normas</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Ayuda</h6>
+          <ul>
+            <li><a href="#">Ayuda</a></li>
+            <li><a href="#">Guías</a></li>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+            <li><a href="#">Accesibilidad</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Gestionar cookies</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3 footer-col">
+          <h6>Redes sociales</h6>
+          <ul class="social-list">
+            <li><a href="#">X</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
