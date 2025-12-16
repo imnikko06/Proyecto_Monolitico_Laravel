@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Category;
 use App\Models\File;
 use App\Models\Petition;
@@ -48,7 +47,7 @@ class PetitionController extends Controller
     public function listMine()
     {
         $petitions = Auth::user()->petitionsCreated;
-        return view('petitions.index', compact('petitions'));
+        return view('petitions.mypetitions', compact('petitions'));
     }
 
     /*
@@ -153,5 +152,89 @@ class PetitionController extends Controller
         }
         $petitions = $user->signedPetitions;
         return view('petitions.mysigns', compact('petitions'));
+    }
+
+    public function edit($id)
+    {
+        $petition = Petition::findOrFail($id);
+        $this->authorize('update', $petition);
+
+        $categorias = Category::all();
+
+        return view('petitions.edit-add', compact('petition', 'categorias'));
+    }
+    public function update(Request $request, $id)
+    {
+        $petition = Petition::findOrFail($id);
+        $this->authorize('update', $petition);
+
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'destinatary' => 'required',
+            'category_id' => 'required|exists:categories,id',
+            'file' => 'nullable|image|max:10240',
+        ]);
+
+        $petition->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'destinatary' => $request->destinatary,
+            'category_id' => $request->category_id,
+        ]);
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('assets/img');
+
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
+
+            $file->move($destinationPath, $filename);
+
+            if ($petition->files()->exists()) {
+                $oldFile = $petition->files()->first();
+                if (file_exists(public_path($oldFile->file_path))) {
+                    unlink(public_path($oldFile->file_path));
+                }
+                $oldFile->update([
+                    'name' => $file->getClientOriginalName(),
+                    'file_path' => 'assets/img/' . $filename,
+                ]);
+            } else {
+                File::create([
+                    'name' => $file->getClientOriginalName(),
+                    'file_path' => 'assets/img/' . $filename,
+                    'petition_id' => $petition->id,
+                ]);
+            }
+        }
+
+        return redirect()->route('petitions.show', $petition->id)
+            ->with('success', 'Petición actualizada correctamente.');
+    }
+
+
+    public function delete($id){
+        $petition = Petition::findOrFail($id);
+
+        $this->authorize('delete', $petition);
+
+        $petition->signers()->detach();
+
+        foreach ($petition->files as $file) {
+            if (file_exists(public_path($file->file_path))) {
+                unlink(public_path($file->file_path));
+            }
+            $file->delete();
+        }
+
+        $petition->delete();
+
+        return redirect()->route('petitions.index')
+            ->with('success', 'Petición eliminada correctamente.');
+
     }
 }

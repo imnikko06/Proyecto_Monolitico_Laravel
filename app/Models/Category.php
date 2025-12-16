@@ -11,10 +11,6 @@ class Category extends Model
      */
     protected $table = 'categories';
     /*
-     * Definicion de PK
-     */
-    protected $primaryKey = 'category_id';
-    /*
      * Definicion campos fillable
      */
     protected $fillable = ['name'];

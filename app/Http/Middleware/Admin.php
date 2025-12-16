@@ -16,12 +16,14 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->role_id == 2) {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        if (Auth::user()->role_id != 2) {
+            abort(403, 'Acceso Denegado. Solo administradores.');
+        }
 
         return $next($request);
-    } else {
-        return redirect('/');
-    }
-
     }
 }
