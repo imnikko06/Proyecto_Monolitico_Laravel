@@ -13,7 +13,6 @@
                                  alt="Imagen de la petición">
 
                             <div class="card-body petition-content">
-                                <div class="petition-sponsor mb-2">Patrocinado por {{ $petition->signers }} firmantes</div>
                                 <h5 class="petition-title card-title">{{ $petition->title }}</h5>
                                 <p class="petition-description card-text">{{ $petition->description }}</p>
                                 <div class="petition-author mb-2">Autor de la Petición</div>

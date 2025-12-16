@@ -134,17 +134,36 @@
                             <img src="{{ asset($petition->files->first() ? $petition->files->first()->file_path : 'assets/img/foto.png') }}"
                                  alt="Imagen de la petición">
                             <div class="petition-content">
-                                <div class="petition-sponsor">Patrocinado por 6 firmantes</div>
                                 <div class="petition-title">{{$petition -> title}}
                                 </div>
                                 <div class="petition-description">{{$petition -> description}}
                                 </div>
                                 <div class="petition-author">Autor de la Petición</div>
                                 <div class="petition-signatures">{{$petition ->signers}} Firmantes</div>
-                                <a href="{{ route('petitions.show', $petition->id) }}" class="btn btn-outline-secondary btn-sign">Firma esta petición</a>
+                                <a href="{{ route('petitions.show', $petition->id) }}" class="btn btn-outline-secondary btn-sign mb-2">
+                                    Firma esta petición
+                                </a>
+
+                                @can('update', $petition)
+                                    <a href="{{ route('petitions.edit', $petition->id) }}" class="btn btn-warning btn-edit mb-2">
+                                        Editar
+                                    </a>
+                                @endcan
+
+                                @can('delete', $petition)
+                                    <form action="{{ route('petitions.delete', $petition->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-delete mb-2"
+                                                onclick="return confirm('¿Estás seguro de eliminar esta petición?')">
+                                            Eliminar
+                                        </button>
+                                    </form>
+                                @endcan
                             </div>
                         </div>
                     </div>
+
                 @endforeach
             </div>
 
