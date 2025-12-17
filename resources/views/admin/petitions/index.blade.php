@@ -14,6 +14,7 @@
                 <table class="table table-striped mb-0 align-middle">
                     <thead class="table-dark">
                     <tr>
+                        <th>File</th>
                         <th>ID</th>
                         <th>Título</th>
                         <th>Usuario</th>
@@ -26,7 +27,13 @@
                     <tbody>
                     @foreach($petitions as $petition)
                         <tr>
-                            <td>{{ $petition->id }}</td>
+                            <td>
+                                <img
+                                    src="{{ asset($petition->files->first() ? $petition->files->first()->file_path : 'assets/img/foto.png') }}"
+                                    style="max-width: 40px; max-height: 40px; object-fit: cover;"
+                                    alt="Archivo"
+                                >
+                            </td>                            <td>{{ $petition->id }}</td>
                             <td>{{ $petition->title }}</td>
                             <td>{{ $petition->user->name }}</td>
                             <td>{{ $petition->signers ?? 0 }}</td>

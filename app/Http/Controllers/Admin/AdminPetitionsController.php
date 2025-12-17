@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\File;
 use App\Models\Petition;
 use Illuminate\Http\Request;
 
@@ -34,17 +35,44 @@ class AdminPetitionsController extends Controller
     // Guardar nueva petición
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'destinatary' => 'required|string',
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'destinatary' => 'required',
             'signers' => 'required|integer|min:0',
             'status' => 'required|in:accepted,pending',
             'user_id' => 'required|exists:users,id',
             'category_id' => 'required|exists:categories,id',
+            'file' => 'nullable|image|max:10240',
         ]);
 
-        Petition::create($data);
+        $petition = Petition::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'destinatary' => $request->destinatary,
+            'signers' => $request->signers,
+            'status' => $request->status,
+            'user_id' => $request->user_id,
+            'category_id' => $request->category_id,
+        ]);
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('assets/img');
+
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
+
+            $file->move($destinationPath, $filename);
+
+            File::create([
+                'name' => $file->getClientOriginalName(),
+                'file_path' => 'assets/img/' . $filename,
+                'petition_id' => $petition->id,
+            ]);
+        }
 
         return redirect()->route('admin.petitions.index')
             ->with('success', 'Petición creada correctamente.');
@@ -62,33 +90,60 @@ class AdminPetitionsController extends Controller
     {
         $petition = Petition::findOrFail($id);
 
-        $data = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'destinatary' => 'required|string',
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required',
+            'destinatary' => 'required',
             'signers' => 'required|integer|min:0',
             'status' => 'required|in:accepted,pending',
             'user_id' => 'required|exists:users,id',
             'category_id' => 'required|exists:categories,id',
+            'file' => 'nullable|image|max:10240',
         ]);
 
-        $petition->update($data);
+        $petition->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'destinatary' => $request->destinatary,
+            'signers' => $request->signers,
+            'status' => $request->status,
+            'user_id' => $request->user_id,
+            'category_id' => $request->category_id,
+        ]);
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('assets/img');
+
+            if (!file_exists($destinationPath)) {
+                mkdir($destinationPath, 0755, true);
+            }
+
+            $file->move($destinationPath, $filename);
+
+            if ($petition->files()->exists()) {
+                $oldFile = $petition->files()->first();
+
+                if (file_exists(public_path($oldFile->file_path))) {
+                    unlink(public_path($oldFile->file_path));
+                }
+
+                $oldFile->update([
+                    'name' => $file->getClientOriginalName(),
+                    'file_path' => 'assets/img/' . $filename,
+                ]);
+            } else {
+                File::create([
+                    'name' => $file->getClientOriginalName(),
+                    'file_path' => 'assets/img/' . $filename,
+                    'petition_id' => $petition->id,
+                ]);
+            }
+        }
 
         return redirect()->route('admin.petitions.index')
             ->with('success', 'Petición actualizada correctamente.');
-    }
-
-    // Eliminar petición
-    public function delete($id)
-    {
-        $petition = Petition::findOrFail($id);
-
-        $petition->signers()->detach();
-
-        $petition->delete();
-
-        return redirect()->route('admin.petitions.index')
-            ->with('success', 'Petición eliminada correctamente.');
     }
 
 

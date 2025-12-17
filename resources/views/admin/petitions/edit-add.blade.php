@@ -7,7 +7,9 @@
         </div>
 
         <div class="card-body">
-            <form action="{{ isset($petition) ? route('admin.petitions.update', $petition->id) : route('admin.petitions.store') }}" method="POST">
+            <form action="{{ isset($petition) ? route('admin.petitions.update', $petition->id) : route('admin.petitions.store') }}"
+                  method="POST"
+                  enctype="multipart/form-data">
                 @csrf
                 @if(isset($petition))
                     @method('PUT')
@@ -61,6 +63,22 @@
                             </option>
                         @endforeach
                     </select>
+                </div>
+                <div class="mb-3">
+                    <label for="file" class="form-label">Imagen</label>
+                    <input type="file" name="file" id="file" class="form-control">
+
+                    @if(isset($petition) && $petition->files->first())
+                        <div class="mt-2">
+                            <p class="mb-1 text-muted">Imagen actual:</p>
+                            <img
+                                src="{{ asset($petition->files->first()->file_path) }}"
+                                class="img-thumbnail"
+                                style="max-width: 200px;"
+                                alt="Imagen actual"
+                            >
+                        </div>
+                    @endif
                 </div>
 
                 <button type="submit" class="btn btn-success">{{ isset($petition) ? 'Actualizar' : 'Crear' }}</button>
