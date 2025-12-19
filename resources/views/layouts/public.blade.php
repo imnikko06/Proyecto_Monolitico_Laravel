@@ -20,7 +20,10 @@
         <a class="navbar-brand" href="{{route('home')}}">
             <img src="../assets/img/logo.png" alt="Logo" height="28">
         </a>
-        <a href="./makeapetition.html" class="btn btn-outline-dark btn-sm d-lg-none btn-mobile-nav" style="font-weight: 600; border-color: #333; color: #333; border-radius: 6px; font-size: 0.9rem; padding: 0.3rem 0.6rem;" onclick="window.location.href = './makeapetition.html'">Inicia una petición</a>
+
+        @if (Auth::check())
+            <a href="./makeapetition.html" class="btn btn-outline-dark btn-sm d-lg-none btn-mobile-nav" style="font-weight: 600; border-color: #333; color: #333; border-radius: 6px; font-size: 0.9rem; padding: 0.3rem 0.6rem;" onclick="window.location.href = './makeapetition.html'">Inicia una petición</a>
+        @endif
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,54 +33,91 @@
         <div class="collapse navbar-collapse" id="navbarContent">
 
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center d-none d-lg-flex">
-                <li class="nav-item"><a class="nav-link" href="{{route('petitions.mine')}}">Mis peticiones</a></li>
+
+                @if (Auth::check())
+                    <li class="nav-item"><a class="nav-link" href="{{route('petitions.mine')}}">Mis peticiones</a></li>
+                @endif
+
                 <li class="nav-item"><a class="nav-link" href="{{route('petitions.index')}}">Mas Peticiones</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{route('petitions.signedPetitions')}}">Mis Peticiones Firmadas</a></li>
-                <li class="nav-item position-relative">
-                    <i class="fas fa-search position-absolute"
-                       style="right: 15px; top: 50%; transform: translateY(-50%); color:#888;"></i>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="{{route('petitions.create')}}">Inicia una Peticion</a></li>
+
+                @if (Auth::check())
+                    <li class="nav-item"><a class="nav-link" href="{{route('petitions.signedPetitions')}}">Mis Peticiones Firmadas</a></li>
+
+                    <li class="nav-item position-relative">
+                        <i class="fas fa-search position-absolute"
+                           style="right: 15px; top: 50%; transform: translateY(-50%); color:#888;"></i>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{{route('petitions.create')}}">Inicia una Peticion</a></li>
+                @endif
 
             </ul>
+
             <div class="d-none d-lg-flex align-items-center gap-3 flex-wrap">
 
-                <?php if(Auth::check()){?>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-                        <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="img-xs rounded-circle" style="width: 40px" src="{{ asset('assets/img/foto.png') }}" alt="Profile image"> </a>
-                        <div class="dropdown-menu dropdown-menu-end navbar-dropdown">
-                            <div class="dropdown-header text-center">
-                                <p class="mb-1 mt-3 font-weight-semibold"><?=Auth::user()->name?></p>
-                                <p class="font-weight-light text-muted mb-0"><?=Auth::user()->email?></p>
+                @if(Auth::check())
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+                            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="img-xs rounded-circle" style="width: 40px" src="{{ asset('assets/img/foto.png') }}" alt="Profile image"> </a>
+                            <div class="dropdown-menu dropdown-menu-end navbar-dropdown">
+                                <div class="dropdown-header text-center">
+                                    <p class="mb-1 mt-3 font-weight-semibold">{{Auth::user()->name}}</p>
+                                    <p class="font-weight-light text-muted mb-0">{{Auth::user()->email}}</p>
+                                </div>
+                                <a class="dropdown-item" href ="{{route('profile.edit')}}">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
+                                <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();" >Sign Out<i class="dropdown-item-icon ti-dashboard"></i></a>
+                                <form id="logout" action="{{route('logout')}}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             </div>
-                            <a class="dropdown-item" href ="{{route('profile.edit')}}">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                            <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout').submit();" >Sign Out<i class="dropdown-item-icon ti-dashboard"></i></a>
-                            <form id="logout" action="{{route('logout')}}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
 
-                <?php }else{  ?>
+                @else
+                    <a class="nav-link fs-5 m-2 link-danger" href="{{route('register')}}">Register</a>
+                    <a class="nav-link fs-5 m-2 link-danger" href="{{route('login')}}">Login</a>
 
-                <a class="nav-link fs-5 m-2 link-danger" href="{{route('register')}}">Register</a>
-                <a class="nav-link fs-5 m-2 link-danger" href="{{route('login')}}">Login</a>
-
-                <?php } ?>
+                @endif
             </div>
+
             <ul class="navbar-nav d-lg-none mt-3 nav-mobile-menu">
+
+                @if (Auth::check())
+                    <li class="nav-item border-top">
+                        <a class="nav-link" href="{{route('petitions.mine')}}">Mis peticiones</a>
+                    </li>
+                    <li class="nav-item border-top">
+                        <a class="nav-link" href="{{route('petitions.signedPetitions')}}">Mis Peticiones Firmadas</a>
+                    </li>
+                    <li class="nav-item border-top">
+                        <a class="nav-link" href="{{route('petitions.create')}}">Inicia una Peticion</a>
+                    </li>
+                @endif
+
                 <li class="nav-item border-top">
-                    <a class="nav-link" href="#">Programa de socios/as</a>
+                    <a class="nav-link" href="{{route('petitions.index')}}">Mas Peticiones</a>
                 </li>
+
                 <li class="nav-item border-top">
                     <a class="nav-link" href="#">Buscar</a>
                 </li>
-                <li class="nav-item border-top border-bottom">
-                    <a class="nav-link" href="#">Entra o regístrate</a>
-                </li>
+
+                @if (Auth::check())
+                    <li class="nav-item border-top">
+                        <a class="nav-link" href="{{route('profile.edit')}}">Mi Perfil</a>
+                    </li>
+                    <li class="nav-item border-top border-bottom">
+                        <a class="nav-link" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-mobile').submit();" >Cerrar Sesión</a>
+                        <form id="logout-mobile" action="{{route('logout')}}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                @else
+                    <li class="nav-item border-top border-bottom">
+                        <a class="nav-link" href="{{route('login')}}">Entra o regístrate</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

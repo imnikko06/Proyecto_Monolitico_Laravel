@@ -129,12 +129,12 @@
             <h2 class="fw-bold mb-4">Peticiones patrocinadas por otros usuarios de Change.org</h2>
             <div class="row g-4 mb-5">
                 @foreach($petitions as $petition)
+                    @if($petition->status != 'pending')
                     <div class="col-lg-3 col-md-6">
                         <div class="petition-card">
                             <img src="{{ asset($petition->files->first() ? $petition->files->first()->file_path : 'assets/img/foto.png') }}"
                                  alt="Imagen de la petición">
                             <div class="petition-content">
-                                <div class="petition-sponsor">Patrocinado por 6 firmantes</div>
                                 <div class="petition-title">{{$petition -> title}}
                                 </div>
                                 <div class="petition-description">{{$petition -> description}}
@@ -145,6 +145,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 @endforeach
             </div>
 
